@@ -3,12 +3,16 @@ Package.describe({
   version: '0.0.1',
   summary: 'Ecmascript in the pipeline',
   git: 'https://github.com/MeteorPipeline/ecmascript',
-  documentation: 'README.md'
+  documentation: null
 });
 
 Package.registerBuildPlugin({
   name: 'pipeline:ecmascript',
-  use: ['pipeline:js', 'babel-compiler', 'ecmascript'],
+  use: [
+    'pipeline:js@0.0.1',
+    'babel-compiler@5.8.20-plugins.1',
+    'ecmascript@0.1.3-plugins.5'
+  ],
   sources: [
     'plugin/plugin.js'
   ]
