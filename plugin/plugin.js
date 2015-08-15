@@ -1,4 +1,4 @@
-JavascriptPipelineCompiler.push(class BabelCompiler {
+class BabelCompiler {
   processFilesForTarget(inputFiles) {
     inputFiles.forEach(function (inputFile) {
       var source = inputFile.getContentsAsString();
@@ -60,4 +60,6 @@ JavascriptPipelineCompiler.push(class BabelCompiler {
   setDiskCacheDirectory(cacheDir) {
     Babel.setCacheDir(cacheDir);
   }
-});
+}
+
+JavascriptPipelineCompiler.add(50, new BabelCompiler());
